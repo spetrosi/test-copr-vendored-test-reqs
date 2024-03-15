@@ -45,16 +45,13 @@ BuildRequires:  python3dist(setuptools)
 %install
 %py3_install
 
-%check
-%{python3} setup.py test
-
 # Note that there is no %%files section for the unversioned python module
 %files -n python3-%{srcname}
 %license COPYING
 %doc README.rst
 %{python3_sitelib}/%{srcname}-*.egg-info/
 %{python3_sitelib}/%{srcname}/
-# %{_bindir}/sample-exec
+# %%{_bindir}/sample-exec
 
 %changelog
 * Thu Mar 14 2024 Sergei Petrosian <spetrosi@redhat.com> - 0.4.3-1

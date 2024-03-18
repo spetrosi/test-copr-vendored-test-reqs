@@ -20,11 +20,20 @@ BuildArch:      noarch
 %autosetup -n ansible.posix-%{version_no_tilde}
 find -type f ! -executable -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{}' +
 
-# plugins/callback/debug.py
-# plugins/callback/profile_tasks.py
-# plugins/modules/mount.py
-# plugins/module_utils/__init__.py
-# plugins/module_utils/mount.py
+# Remove unnecessary files
+rm -rf .azure-pipelines bindep.txt CHANGELOG.rst changelogs codecov.yml docs \
+    .github .gitignore hacking README.md requirements.txt shippable.yml \
+    test-requirements.txt tests meta
+
+# Keep only required modules
+mkdir -p plugins-tmp/callback
+mkdir -p plugins-tmp/modules
+mkdir -p plugins-tmp/module_utils
+cp plugins/callback/debug.py plugins/callback/profile_tasks.py plugins-tmp/callback/
+cp plugins/modules/mount.py plugins-tmp/modules/
+cp plugins/module_utils/__init__.py plugins/module_utils/mount.py plugins-tmp/module_utils/
+rm -rf plugins
+mv plugins-tmp plugins
 
 %build
 %ansible_collection_build
@@ -33,8 +42,7 @@ find -type f ! -executable -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{
 %ansible_collection_install
 
 %files -f %{ansible_collection_filelist}
-%license COPYING LICENSES .reuse/dep5
-%doc README.md CHANGELOG.rst*
+%license COPYING PSF-license.txt
 
 %changelog
 * Mon Mar 18 2024 Sergei Petrosian <spetrosi@redhat.com> - 1.5.2-1

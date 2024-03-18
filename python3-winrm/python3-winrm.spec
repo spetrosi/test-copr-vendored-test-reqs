@@ -1,7 +1,7 @@
 %global srcname pywinrm
 %global srcdirname winrm
 
-Name:           python-%{srcname}
+Name:           python3-%{srcname}
 Version:        0.4.3
 Release:        1%{?dist}
 Summary:        winrm python module

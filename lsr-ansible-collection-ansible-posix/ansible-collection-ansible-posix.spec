@@ -18,7 +18,8 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%autosetup -n {%collection_namespace}.%{collection_name}-%{version}
+# autosetup script werdly reads macros. Using %collection_namespace works though
+%autosetup -n %collection_namespace.%{collection_name}-%{version}
 find -type f ! -executable -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{}' +
 
 # Remove unnecessary files

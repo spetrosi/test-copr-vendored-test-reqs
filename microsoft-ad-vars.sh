@@ -2,7 +2,8 @@
 COLLECTION_NAMESPACE=microsoft
 COLLECTION_NAME=ad
 COLLECTION_VERSION=1.4.1
-MODULE_TEMPLATE="mkdir -p plugins-tmp/modules\\
+MODULE_TEMPLATE="# Keep only required modules\\
+mkdir -p plugins-tmp/modules\\
 cp plugins/modules/group.py plugins-tmp/modules/\\
 cp plugins/modules/group.ps1 plugins-tmp/modules/\\
 cp plugins/modules/user.py plugins-tmp/modules/\\

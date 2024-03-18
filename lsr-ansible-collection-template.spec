@@ -1,7 +1,7 @@
 %global collection_namespace COLLECTION_NAMESPACE
 %global collection_name COLLECTION_NAME
 
-Name:           lsr-temp-ansible-collection-%{collection_namespace}-%{collection_name}
+Name:           lsr-ansible-collection-%{collection_namespace}-%{collection_name}
 Version:        COLLECTION_VERSION
 Release:        1%{?dist}
 Summary:        Selected modules from the %{collection_namespace}.%{collection_name} collection for System Roles usage

@@ -5,6 +5,7 @@ SPEC=generated-spec.spec
 PACKAGE_NAME=lsr-ansible-collection-"${COLLECTION_NAMESPACE}"-"${COLLECTION_NAME}"
 
 rm -rf results "${SPEC}"
+cp lsr-ansible-collection-template.spec "${SPEC}"
 
 sed -i "s|COLLECTION_NAMESPACE|$COLLECTION_NAMESPACE|g" "${SPEC}"
 sed -i "s|COLLECTION_NAME|$COLLECTION_NAME|g" "${SPEC}"
@@ -13,6 +14,6 @@ sed -i "s|MODULE_TEMPLATE|$MODULE_TEMPLATE|g" "${SPEC}"
 
 mkdir results
 cp "${SPEC}" results
+cp "${SPEC}" "${PACKAGE_NAME}/${PACKAGE_NAME}.spec"
 
-cp "${SPEC}" "${PACKAGE_NAME}/"
-
+rm "${SPEC}"

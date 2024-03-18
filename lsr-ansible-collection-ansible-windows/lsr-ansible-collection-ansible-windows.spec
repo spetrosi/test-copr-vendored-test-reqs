@@ -10,7 +10,6 @@ URL:            %{ansible_collection_url %{collection_namespace} %{collection_na
 %global forgeurl https://github.com/ansible-collections/%{collection_namespace}.%{collection_name}
 Source0:        %{forgeurl}/archive/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  ansible-packaging
-# Version 5 specifically requires ansible-core 2.11 or above
 Requires:       ansible-core > 2.11
 BuildArch:      noarch
 
@@ -29,9 +28,10 @@ rm -rf .azure-pipelines bindep.txt CHANGELOG.rst changelogs codecov.yml docs \
 
 # Keep only required modules
 mkdir -p plugins-tmp/modules
-cp plugins/modules/win_shell.py plugins/modules/win_shell.ps1 \
-    plugins/modules/win_command.py plugins/modules/win_command.ps1 \
-    plugins-tmp/modules/
+cp plugins/modules/win_shell.py plugins-tmp/modules/
+cp plugins/modules/win_shell.ps1 plugins-tmp/modules/
+cp plugins/modules/win_command.py plugins-tmp/modules/
+cp plugins/modules/win_command.ps1 plugins-tmp/modules/
 rm -rf plugins
 mv plugins-tmp plugins
 

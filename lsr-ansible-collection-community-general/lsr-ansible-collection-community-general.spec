@@ -18,7 +18,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%autosetup -n ansible.posix-%{version}
+%autosetup -n {%collection_namespace}.%{collection_name}-%{version}
 find -type f ! -executable -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{}' +
 
 # Remove unnecessary files

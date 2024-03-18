@@ -2,7 +2,7 @@
 %global collection_name posix
 
 Name:           lsr-ansible-collection-%{collection_namespace}-%{collection_name}
-Version:        8.4.0
+Version:        1.5.2
 Release:        1%{?dist}
 Summary:        Selected modules from the %{collection_namespace}.%{collection_name} collection for System Roles usage
 License:        GPL-3.0-or-later and PSF-2.0
@@ -18,7 +18,7 @@ BuildArch:      noarch
 %{summary}.
 
 %prep
-%autosetup -n ansible.posix-%{version}
+%autosetup -n {%collection_namespace}.%{collection_name}-%{version}
 find -type f ! -executable -name '*.py' -print -exec sed -i -e '1{\@^#!.*@d}' '{}' +
 
 # Remove unnecessary files

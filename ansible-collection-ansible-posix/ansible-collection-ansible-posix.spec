@@ -1,4 +1,4 @@
-Name:           ansible-collection-ansible-posix
+Name:           lsr-ansible-collection-ansible-posix
 Version:        1.5.2
 Release:        1%{?dist}
 Summary:        Selected modules from the ansible.posix collection for System Roles usage

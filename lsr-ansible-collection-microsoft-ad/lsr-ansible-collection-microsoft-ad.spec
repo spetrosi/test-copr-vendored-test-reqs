@@ -1,8 +1,8 @@
-%global collection_namespace community
-%global collection_name general
+%global collection_namespace microsoft
+%global collection_name ad
 
 Name:           lsr-ansible-collection-%{collection_namespace}-%{collection_name}
-Version:        8.4.0
+Version:        1.4.1
 Release:        1%{?dist}
 Summary:        Selected modules from the %{collection_namespace}.%{collection_name} collection for System Roles usage
 License:        GPL-3.0-or-later AND BSD-2-Clause AND MIT AND PSF-2.0
@@ -29,8 +29,8 @@ rm -rf .azure-pipelines bindep.txt CHANGELOG.rst changelogs codecov.yml docs \
 
 # Keep only required modules
 mkdir -p plugins-tmp/modules
-cp plugins/modules/win_domain_group.py plugins/modules/win_domain_group.ps1 \
-    plugins/modules/win_domain_user.py plugins/modules/win_domain_user.ps1 \
+cp plugins/modules/group.py plugins/modules/group.ps1 \
+    plugins/modules/user.py plugins/modules/user.ps1 \
     plugins-tmp/modules/
 rm -rf plugins
 mv plugins-tmp plugins

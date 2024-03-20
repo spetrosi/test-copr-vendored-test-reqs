@@ -2,7 +2,7 @@
 %global collection_name ad
 
 Name:           lsr-ansible-collection-%{collection_namespace}-%{collection_name}
-Version:        1.4.1
+Version:        1.5.0
 Release:        1%{?dist}
 Summary:        Selected modules from the %{collection_namespace}.%{collection_name} collection for System Roles usage
 License:        GPL-3.0-or-later AND BSD-2-Clause AND MIT AND PSF-2.0

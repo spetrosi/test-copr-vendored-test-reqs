@@ -1,7 +1,7 @@
 #! /bin/sh -x
 COLLECTION_NAMESPACE=ansible
 COLLECTION_NAME=windows
-COLLECTION_VERSION=2.2.0
+COLLECTION_VERSION=2.3.0
 MODULE_TEMPLATE="# Keep only required modules\\
 mkdir -p plugins-tmp/modules\\
 cp plugins/modules/win_shell.py plugins-tmp/modules/\\

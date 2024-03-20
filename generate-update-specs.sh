@@ -3,7 +3,7 @@
 # Copyright: (c) 2024, Red Hat, Inc.
 # SPDX-License-Identifier: MITset -euo pipefail
 
-# Run this file at the root of the repository then see what changed
+# Run this file at the root of the repository then manually commit changes
 # You need ansible-galaxy cli available
 export COLLECTION_NAMESPACE COLLECTION_NAME COLLECTION_VERSION MODULE_TEMPLATE
 
@@ -39,6 +39,14 @@ update_ansible_coll_vers() {
     sed -i "s/Version:.*/Version:        $coll_ver/g" "${lsr_name}/${lsr_name}.spec"
     rm -f ${coll_dash}-*.tar.gz requirements.yml
 }
+
+update_pywinrm_ver() {
+    local ver
+    ver=$(python3 -m pip index versions pywinrm | grep -oP 'LATEST:\s*\K.*')
+    sed -i "s|^\%global srcver.*|%global srcver $ver|g" lsr-python3-pywinrm-src/lsr-python3-pywinrm-src.spec
+}
+
+update_pywinrm_ver
 
 for coll in ansible.posix ansible.windows microsoft.ad; do
     update_ansible_coll_vers "$coll"

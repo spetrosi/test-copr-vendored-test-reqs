@@ -1,7 +1,8 @@
 %global srcname pywinrm
+%global srcver 0.4.3
 
 Name:           lsr-python3-%{srcname}-src
-Version:        0.4.3
+Version:        %{srcver}
 Release:        1%{?dist}
 Summary:        Sources for the %{srcname} module and its dependencies to be installed with pip3
 

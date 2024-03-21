@@ -22,16 +22,12 @@ ansible.windows.win_shell Ansible module}
 Summary:        %{summary}
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
-# BuildRequires:  python3-setuptools
-
-# BuildRequires:  python3-devel
-# BuildRequires:  python3dist(setuptools)
-# BuildRequires:  python3dist(pytest)
-# BuildRequires:  python3dist(mock)
-# BuildRequires:  python3dist(xmltodict)
-# BuildRequires:  python3dist(requests) >= 2.9.1
-# BuildRequires:  python3dist(requests-ntlm) >= 0.3
-# BuildRequires:  python3dist(six)
+BuildRequires:  python3dist(pytest)
+BuildRequires:  python3dist(mock)
+BuildRequires:  python3dist(xmltodict)
+BuildRequires:  python3dist(requests) >= 2.9.1
+BuildRequires:  python3dist(requests-ntlm) >= 0.3
+BuildRequires:  python3dist(six)
 
 %{?python_provide:%python_provide python3-%{srcname}}
 

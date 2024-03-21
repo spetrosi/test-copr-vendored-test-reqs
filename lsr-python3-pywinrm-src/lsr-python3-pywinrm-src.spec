@@ -10,10 +10,9 @@ License:        MIT
 URL:            https://pypi.org/project/%{srcname}/
 
 BuildArch:      noarch
-BuildRequires:  python3dist(pip)
-BuildRequires:  python3
 BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python3dist(setuptools)
+BuildRequires:  python3dist(pip)
 
 %description
 To install %{srcname} from this RPM, run the following command:
@@ -22,13 +21,12 @@ $ pip3 install --no-index \
     --ignore-installed
 
 %install
-# mkdir -p %{buildroot}%{_datadir}/%{name}
-# cd %{buildroot}%{_datadir}/%{name}
-# python3 -m pip install %{srcname}==%{version}
-python3 -m pip install %{srcname}==%{version} -I --root %{buildroot}
+mkdir -p %{buildroot}%{_datadir}/%{name}
+cd %{buildroot}%{_datadir}/%{name}
+python3 -m pip download %{srcname}==%{version}
 
 %files
-/%{_datadir}
+/%{_datadir}/%{name}
 
 %changelog
 * Thu Mar 14 2024 Sergei Petrosian <spetrosi@redhat.com> - 0.4.3-1

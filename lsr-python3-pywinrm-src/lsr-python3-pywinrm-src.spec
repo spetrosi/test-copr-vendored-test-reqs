@@ -21,7 +21,7 @@ $ pip3 install --no-index \
 %install
 mkdir -p %{buildroot}%{_datadir}/%{name}
 cd %{buildroot}%{_datadir}/%{name}
-pip3 download %{srcname}==%{version}
+python3 -m pip download %{srcname}==%{version}
 
 %files
 /%{_datadir}/%{name}

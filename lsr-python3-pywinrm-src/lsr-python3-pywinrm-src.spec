@@ -22,12 +22,13 @@ $ pip3 install --no-index \
     --ignore-installed
 
 %install
-mkdir -p %{buildroot}%{_datadir}/%{name}
-cd %{buildroot}%{_datadir}/%{name}
-python3 -m pip download %{srcname}==%{version}
+# mkdir -p %{buildroot}%{_datadir}/%{name}
+# cd %{buildroot}%{_datadir}/%{name}
+# python3 -m pip install %{srcname}==%{version}
+python3 -m pip install %{srcname}==%{version} -I --root %{buildroot}
 
 %files
-/%{_datadir}/%{name}
+/%{_datadir}
 
 %changelog
 * Thu Mar 14 2024 Sergei Petrosian <spetrosi@redhat.com> - 0.4.3-1

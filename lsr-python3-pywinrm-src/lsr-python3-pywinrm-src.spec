@@ -21,6 +21,8 @@ $ pip3 install --no-index \
     --ignore-installed
 
 %install
+pip3 install --upgrade pip
+
 mkdir -p %{buildroot}%{_datadir}/%{name}
 cd %{buildroot}%{_datadir}/%{name}
 pip3 download %{srcname}==%{version}

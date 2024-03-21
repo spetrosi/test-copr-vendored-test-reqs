@@ -11,6 +11,9 @@ URL:            https://pypi.org/project/%{srcname}/
 
 BuildArch:      noarch
 BuildRequires:  python3dist(pip)
+BuildRequires:  python3
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
 
 %description
 To install %{srcname} from this RPM, run the following command:

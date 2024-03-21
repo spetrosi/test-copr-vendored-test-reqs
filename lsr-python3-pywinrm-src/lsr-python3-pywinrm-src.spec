@@ -12,6 +12,7 @@ URL:            https://pypi.org/project/%{srcname}/
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
+BuildRequires:  python3dist(setuptools-rust)
 BuildRequires:  python3dist(pip)
 
 %description

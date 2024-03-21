@@ -12,7 +12,6 @@ URL:            https://pypi.org/project/%{srcname}/
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(setuptools-rust)
 BuildRequires:  python3dist(pip)
 
 %description
@@ -24,7 +23,7 @@ $ pip3 install --no-index \
 %install
 mkdir -p %{buildroot}%{_datadir}/%{name}
 cd %{buildroot}%{_datadir}/%{name}
-python3 -m pip download %{srcname}==%{version}
+pip3 download %{srcname}==%{version}
 
 %files
 /%{_datadir}/%{name}
